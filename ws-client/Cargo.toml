@@ -26,6 +26,6 @@ url = "2"
 webpki = { version = "0.22", features = ["std"] }
 
 [dev-dependencies]
-env_logger = "0.8"
+env_logger = "0.9"
 jsonrpsee-test-utils = { path = "../test-utils" }
 tokio = { version = "1", features = ["full"] }
