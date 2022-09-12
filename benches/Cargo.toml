@@ -8,7 +8,7 @@ license = "MIT"
 publish = false
 
 [dev-dependencies]
-criterion = "0.3"
+criterion = "0.4"
 futures-channel = "0.3"
 jsonrpsee = { path = "../jsonrpsee", features = ["full"] }
 num_cpus = "1"
