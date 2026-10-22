@@ -1,20 +1,23 @@
 [package]
 name = "jsonrpsee-types"
-version = "0.2.0-alpha.5"
-authors = ["Parity Technologies <admin@parity.io>"]
-description = "Shared types for jsonrpsee"
-edition = "2018"
-license = "MIT"
-repository = "https://github.com/paritytech/jsonrpsee"
-homepage = "https://github.com/paritytech/jsonrpsee"
-documentation = "https://docs.rs/jsonrpsee-types"
+description = "JSON-RPC v2 specific types"
+version.workspace = true
+authors.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+documentation.workspace = true
+homepage.workspace = true
+keywords.workspace = true
+readme.workspace = true
+publish = true
+
+[lints]
+workspace = true
 
 [dependencies]
-async-trait = "0.1"
-beef = "0.5"
-futures-channel = { version = "0.3", features = ["sink"] }
-futures-util = { version = "0.3", default-features = false, features = ["std", "sink", "channel"] }
-log = { version = "0.4", default-features = false }
-serde = { version = "1", default-features = false, features = ["derive"] }
-serde_json = { version = "1", default-features = false, features = ["alloc", "raw_value", "std"] }
-thiserror = "1.0"
+http = { workspace = true }
+serde = { workspace = true, features = ["alloc"] }
+serde_json = { workspace = true }
+thiserror = { workspace = true }

@@ -1,0 +1,31 @@
+[package]
+name = "jsonrpsee-wasm-client"
+description = "JSON-RPC WASM client"
+version.workspace = true
+authors.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+documentation.workspace = true
+homepage.workspace = true
+keywords.workspace = true
+readme.workspace = true
+publish = true
+
+[lints]
+workspace = true
+
+[target.'cfg(target_arch = "wasm32")'.dependencies]
+jsonrpsee-types = { workspace = true }
+jsonrpsee-client-transport = { workspace = true, features = ["web"] }
+jsonrpsee-core = { workspace = true, features = ["async-wasm-client"] }
+tower = { workspace = true }
+
+[package.metadata.docs.rs]
+all-features = true
+rustdoc-args = ["--cfg", "docsrs"]
+targets = ["wasm32-unknown-unknown"]
+
+[package.metadata.playground]
+all-features = true

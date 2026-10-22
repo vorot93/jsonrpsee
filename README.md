@@ -1,47 +1,63 @@
 # jsonrpsee
 
+[![GitLab Status](https://gitlab.parity.io/parity/mirrors/jsonrpsee/badges/master/pipeline.svg)](https://gitlab.parity.io/parity/mirrors/jsonrpsee/-/pipelines)
+[![crates.io](https://img.shields.io/crates/v/jsonrpsee)](https://crates.io/crates/jsonrpsee)
+[![Docs](https://img.shields.io/docsrs/jsonrpsee/latest)](https://docs.rs/jsonrpsee)
+![MIT](https://img.shields.io/crates/l/jsonrpsee.svg)
+[![CI](https://github.com/paritytech/jsonrpsee/actions/workflows/ci.yml/badge.svg)](https://github.com/paritytech/jsonrpsee/actions/workflows/ci.yml)
+[![Benchmarks](https://github.com/paritytech/jsonrpsee/actions/workflows/benchmarks_gitlab.yml/badge.svg)](https://github.com/paritytech/jsonrpsee/actions/workflows/benchmarks_gitlab.yml)
+[![dependency status](https://deps.rs/crate/jsonrpsee/latest/status.svg)](https://deps.rs/crate/jsonrpsee)
+
 JSON-RPC library designed for async/await in Rust.
 
 Designed to be the successor to [ParityTech's JSONRPC crate](https://github.com/paritytech/jsonrpc/).
 
-Support `WebSocket` and `HTTP` transports for both client and server.
+## Features
+- Client/server HTTP/HTTP2 support
+- Client/server WebSocket support
+- Client WASM support via web-sys
+- Client transport abstraction to provide custom transports
+- Middleware
 
-## Under development
-
-The library is still under development; do not use in production.
-
-## Sub-projects
-- [jsonrpsee-http-client](./http-client) [![crates.io][ws-client-image]][ws-client-url]
-- [jsonrpsee-http-server](./http-server) [![crates.io][http-server-image]][http-server-url]
-- [jsonrpsee-proc-macros](./proc-macros) [![crates.io][proc-macros-image]][proc-macros-url]
-- [jsonrpsee-ws-client](./ws-client) [![crates.io][ws-client-image]][ws-client-url]
-- [jsonrpsee-ws-server](./http-server) [![crates.io][http-server-image]][http-server-url]
-
-[http-client-image]: https://img.shields.io/crates/v/jsonrpsee-http-client.svg
-[http-client-url]: https://crates.io/crates/jsonrpsee-http-client
-[http-server-image]: https://img.shields.io/crates/v/jsonrpsee-http-server.svg
-[http-server-url]: https://crates.io/crates/jsonrpsee-http-server
-[proc-macros-url]: https://crates.io/crates/jsonrpsee-proc-macros
-[proc-macros-image]: https://img.shields.io/crates/v/jsonrpsee-proc-macros.svg
-[ws-client-image]: https://img.shields.io/crates/v/jsonrpsee-ws-client.svg
-[ws-client-url]: https://crates.io/crates/jsonrpsee-ws-client
-[ws-server-image]: https://img.shields.io/crates/v/jsonrpsee-ws-server.svg
-[ws-server-url]: https://crates.io/crates/jsonrpsee-ws-server
+## Documentation
+- [API Documentation](https://docs.rs/jsonrpsee)
 
 ## Examples
 
 - [HTTP](./examples/examples/http.rs)
 - [WebSocket](./examples/examples/ws.rs)
-- [WebSocket pubsub](./examples/examples/ws_subscription.rs)
+- [WebSocket pubsub](./examples/examples/ws_pubsub_broadcast.rs)
 - [API generation with proc macro](./examples/examples/proc_macro.rs)
+- [CORS server](./examples/examples/cors_server.rs)
+- [Core client](./examples/examples/core_client.rs)
+- [HTTP proxy middleware](./examples/examples/http_proxy_middleware.rs)
+- [jsonrpsee as service](./examples/examples/jsonrpsee_as_service.rs)
+- [low level API](./examples/examples/jsonrpsee_server_low_level_api.rs)
+- [Websocket served over dual-stack (v4/v6) sockets](./examples/examples/ws_dual_stack.rs)
+
+See [this directory](./examples/examples) for more examples
 
 ## Roadmap
 
-See [tracking issue for next stable release](https://github.com/paritytech/jsonrpsee/issues/251)
+See [our tracking milestone](https://github.com/paritytech/jsonrpsee/milestone/2) for the upcoming stable v1.0 release.
 
 ## Users
 
 If your project uses `jsonrpsee` we would like to know. Please open a pull request and add your project to the list below:
-- [substrate-subxt](https://github.com/paritytech/substrate-subxt)
 - [parity bridges common](https://github.com/paritytech/parity-bridges-common)
 - [remote externalities](https://github.com/paritytech/substrate/tree/master/utils/frame/remote-externalities)
+- [polkadot-sdk](https://github.com/paritytech/polkadot-sdk)
+- [substrate-api-client](https://github.com/scs/substrate-api-client)
+- [subwasm](https://github.com/chevdor/subwasm)
+- [subway](https://github.com/AcalaNetwork/subway)
+- [subxt](https://github.com/paritytech/subxt)
+- [Trin](https://github.com/ethereum/trin)
+- [Uptest](https://github.com/uptest-sc/uptest)
+- [zkSync Era](https://github.com/matter-labs/zksync-era)
+- [Forest](https://github.com/ChainSafe/forest)
+- [NEAR MPC](https://github.com/near/mpc)
+
+## Benchmarks
+
+Daily benchmarks for jsonrpsee can be found:
+- Gitlab machine: <https://paritytech.github.io/jsonrpsee/bench/dev2>
